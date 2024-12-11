@@ -39,18 +39,7 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2>
-        <form id="contactForm">
-          <div>
-            <input id="nameForm" placeholder="name" value={props.contacts[-1].name}></input>
-          </div>
-          <div>
-            <input id="telephoneNumberForm" placeholder="telephone number" value={props.contacts[-1].number} ></input>
-          </div>          
-          <div>
-            <input id="emailForm" placeholder="email" value={props.contacts[-1].email}></input>
-          </div>
-          <button type="button" onClick={handleSubmit}>Submit</button>
-        </form>
+        <ContactForm />
       </section>
       <hr />
       <section>
