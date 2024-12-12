@@ -7,12 +7,21 @@ export const ContactsPage = (props) => {
   const [name, setName ] = useState("");
   const [phone, setPhone ] = useState("#");
   const [email, setEmail] = useState("");
-
+  useEffect(() => {
+    const isDuplicate = props.contacts.name.includes(name);
+    if(name && isDuplicate) {
+      console.log("This name is already taken.")
+    }
+    else {
+      console.log(name);
+    }
+  }, [name])
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(name && props.contacts.includes(name)) {
-      name += " (duplicate)";
-    }
+    // if(name && props.contacts.includes(name)) {
+    //   name += " (duplicate)";
+    // }
+    //set each property.
     e.target.reset()
   };
 

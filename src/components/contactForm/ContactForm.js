@@ -17,7 +17,8 @@ export const ContactForm = ({
         id="nameForm" 
         placeholder="name" 
         value={name}
-        onChange={() => name ? setName(name) : ""}>
+        onChange={() => name ? setName(name) : ""}
+        required>
 
         </input>
       </div>
@@ -38,7 +39,8 @@ export const ContactForm = ({
         id="emailForm" 
         placeholder="email" 
         value={email}
-        onChange={() => email ? setEmail(email) : ""}>
+        onChange={() => email ? setEmail(email) : ""}
+        required>
 
         </input>
       </div>
