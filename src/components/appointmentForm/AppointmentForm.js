@@ -20,11 +20,8 @@ export const AppointmentForm = ({
   setTime,
   handleSubmit
 }) => {
-const handleContact = (contactName) => {
-  const selectContact = contacts.find((contact) => {
-    contact.name === contactName
-  });
-  setContact(selectContact);
+const handleContact = (contact) => {
+  setContact(contact);
 }
   return (
     <form id="appointmentForm" onSubmit={handleSubmit}>
