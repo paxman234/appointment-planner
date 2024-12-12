@@ -1,5 +1,5 @@
 import React from "react";
-import Tile from '../tile/Tile'
+import {Tile} from '../tile/Tile'
 export const TileList = (props) => {
   const {contacts, ...rest} = props;
   contacts.map((contact, index) => {
