@@ -10,8 +10,8 @@ export const ContactsPage = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    name && props.contacts.includes(name) ? name += " (duplicate)" : name;
-    document.getElementById("contactForm").reset();
+    if (name && props.contacts.includes(name)) {name += " (duplicate)" };
+    e.target.reset()
   };
 
   return (
