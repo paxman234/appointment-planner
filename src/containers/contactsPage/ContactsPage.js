@@ -10,7 +10,9 @@ export const ContactsPage = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && props.contacts.includes(name)) {name += " (duplicate)" };
+    if(name && props.contacts.includes(name)) {
+      name += " (duplicate)";
+    }
     e.target.reset()
   };
 
