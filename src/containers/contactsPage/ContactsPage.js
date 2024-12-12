@@ -4,10 +4,6 @@ import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = (props) => {
-  /*
-  Define state variables for 
-  contact info and duplicate check
-  */
   const [name, setName ] = useState("");
   const [number, setNumber ] = useState("#");
   const [email, setEmail] = useState("")
@@ -24,16 +20,7 @@ export const ContactsPage = (props) => {
       return;
     });
     document.getElementById("contactForm").reset();
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
   };
-
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
 
   return (
     <div>

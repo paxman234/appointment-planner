@@ -25,31 +25,40 @@ export const AppointmentForm = ({
       <div>
         <input 
         type="text" 
-        id="nameForm" 
+        id="titleForm" 
         placeholder="name" 
-        value={props.contacts[-1].name}
-        onChange={() => { name ? setName(name) : ""}}>
+        value={props.title}
+        onChange={() => { title ? setTitle(title) : ""}}>
 
         </input>
       </div>
       <div>
         <input 
-        type="tel"
-        id="telephoneNumberForm" 
-        placeholder="telephone number" 
-        value={props.contacts[-1].number}
-        pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
-        onChange={() => { phone ? setPhone(phone) : ""}}>
+        // type="tel"
+        id="contactForm" 
+        placeholder="contact" 
+        value={props.contact}
+        onChange={() => { contact ? setContact(contact) : {}}}>
 
         </input>
       </div>          
       <div>
         <input 
-        type="text" 
-        id="emailForm" 
-        placeholder="email" 
-        value={props.contacts[-1].email}
-        onChange={() => { email ? setEmail(email) : ""}}>
+        type="date" 
+        id="dateForm" 
+        placeholder="date" 
+        value={props.date}
+        onChange={() => { date ? setDate(date) : {}}}>
+          
+        </input>
+      </div>
+      <div>
+        <input 
+        type="time" 
+        id="timeForm" 
+        placeholder="time" 
+        value={props.time}
+        onChange={() => { time ? setTime(time) : {}}}>
           
         </input>
       </div>

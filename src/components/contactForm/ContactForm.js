@@ -16,7 +16,7 @@ export const ContactForm = ({
         type="text" 
         id="nameForm" 
         placeholder="name" 
-        value={props.contacts[-1].name}
+        value={props.name}
         onChange={() => { name ? setName(name) : ""}}>
 
         </input>
@@ -26,7 +26,7 @@ export const ContactForm = ({
         type="tel"
         id="telephoneNumberForm" 
         placeholder="telephone number" 
-        value={props.contacts[-1].number}
+        value={props.number}
         pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
         onChange={() => { phone ? setPhone(phone) : ""}}>
 
@@ -37,9 +37,9 @@ export const ContactForm = ({
         type="text" 
         id="emailForm" 
         placeholder="email" 
-        value={props.contacts[-1].email}
+        value={props.email}
         onChange={() => { email ? setEmail(email) : ""}}>
-          
+
         </input>
       </div>
       <button type="submit">Submit</button>
