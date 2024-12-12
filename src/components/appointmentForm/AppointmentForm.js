@@ -63,7 +63,7 @@ export const AppointmentForm = ({
         </input>
       </div>
       <div>
-        <ContactPicker name="contactPicker" value={props.contact[0]} handleContact={handleContact} contactsList={props.contact} />
+        <ContactPicker name="contactPicker" value={props.contact[0]} handleContact={handleContact} contactsList={contacts} />
       </div>
       <button type="submit">Submit</button>
     </form>
