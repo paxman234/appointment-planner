@@ -19,7 +19,12 @@ export const AppointmentForm = ({
   setTime,
   handleSubmit
 }) => {
-
+const handleContact = (contactName) => {
+  const selectContact = contacts.find((contact) => {
+    contact.name === contactName
+  });
+  setContact(selectContact);
+}
   return (
     <form id="appointmentForm" onSubmit={handleSubmit}>
       <div>
@@ -32,15 +37,6 @@ export const AppointmentForm = ({
 
         </input>
       </div>
-      {/* <div>
-        <input 
-        id="contactForm" 
-        placeholder="contact" 
-        value={props.contact}
-        onChange={() => { contact ? setContact(contact) : {}}}>
-
-        </input>
-      </div>           */}
       <div>
         <input 
         type="date" 
@@ -63,9 +59,9 @@ export const AppointmentForm = ({
         </input>
       </div>
       <div>
-        <ContactPicker name="contactPicker" value={props.contact[0]} handleContact={handleContact} contactsList={contacts} />
+        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} handleContact={handleContact} contactsList={contacts} />
       </div>
-      <button type="submit">Submit</button>
+      <button id="appointmentFormBtn" type="submit">Submit</button>
     </form>
   );
 };
