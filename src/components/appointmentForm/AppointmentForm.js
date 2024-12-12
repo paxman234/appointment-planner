@@ -32,16 +32,15 @@ export const AppointmentForm = ({
 
         </input>
       </div>
-      <div>
+      {/* <div>
         <input 
-        // type="tel"
         id="contactForm" 
         placeholder="contact" 
         value={props.contact}
         onChange={() => { contact ? setContact(contact) : {}}}>
 
         </input>
-      </div>          
+      </div>           */}
       <div>
         <input 
         type="date" 
