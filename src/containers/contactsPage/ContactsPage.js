@@ -5,8 +5,8 @@ import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = (props) => {
   const [name, setName ] = useState("");
-  const [number, setNumber ] = useState("#");
-  const [email, setEmail] = useState("")
+  const [phone, setPhone ] = useState("#");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,8 @@ export const ContactsPage = (props) => {
         <ContactForm 
         name={name} 
         setName={setName}
-        number={number} 
-        setNumber={setNumber}
+        phone={phone} 
+        setPhone={setPhone}
         email={email} 
         setEmail={setEmail}
         handleSubmit={handleSubmit} 
