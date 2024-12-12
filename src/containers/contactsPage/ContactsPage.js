@@ -10,15 +10,7 @@ export const ContactsPage = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.contacts.array.forEach(contact => {
-      if(contact.name === name) {
-        console.log("duplicate name entered")
-      } else {
-        console.log("no duplicate");
-        setName(name);
-      }
-      return;
-    });
+    name && props.contacts.includes(name) ? name += " (duplicate)" : name;
     document.getElementById("contactForm").reset();
   };
 
