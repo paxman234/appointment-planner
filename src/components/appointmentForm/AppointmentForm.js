@@ -46,6 +46,7 @@ export const AppointmentForm = ({
         type="date" 
         id="dateForm" 
         placeholder="date" 
+        min={getTodayString()}
         value={props.date}
         onChange={() => { date ? setDate(date) : {}}}>
           
@@ -60,6 +61,9 @@ export const AppointmentForm = ({
         onChange={() => { time ? setTime(time) : {}}}>
           
         </input>
+      </div>
+      <div>
+        <ContactPicker contactsList={props.contact} />
       </div>
       <button type="submit">Submit</button>
     </form>
