@@ -33,7 +33,7 @@ export const AppointmentsPage = (props) => {
         setDate={setDate}
         time={time}
         setTime={setTime}
-        onSubmit={handleSubmit} />
+        handleSubmit={handleSubmit} />
       </section>
       <hr />
       <section>
