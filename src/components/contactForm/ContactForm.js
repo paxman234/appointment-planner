@@ -26,7 +26,7 @@ export const ContactForm = ({
         type="tel"
         id="telephoneNumberForm" 
         placeholder="telephone number" 
-        value={number}
+        value={phone}
         pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
         onChange={() => { phone ? setPhone(phone) : ""}}>
 
