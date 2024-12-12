@@ -8,7 +8,7 @@ export const AppointmentsPage = (props) => {
   Define state variables for 
   appointment info
   */
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [contact, setContact] = useState(null);
   const [date, setDate] = useState(null);
   const [time, setTime] = useState(null);
@@ -18,7 +18,7 @@ export const AppointmentsPage = (props) => {
     Add contact info and clear data  
     */
     const appointmentObj = {
-      name: name,
+      title: title,
       contact: contact,
       date: date,
       time: time
@@ -33,8 +33,8 @@ export const AppointmentsPage = (props) => {
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm         
-        name={name} 
-        setName={setName}
+        title={title} 
+        setTitle={setTitle}
         contact={contact} 
         setContact={setContact}
         date={date} 
