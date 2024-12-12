@@ -1,8 +1,8 @@
 import React from "react";
 import Tile from '../tile/Tile'
 export const TileList = (props) => {
-  const [contactsArray, ...rest] = props;
-  contactsArray.map((contact, index) => {
+  const {contacts, ...rest} = props;
+  contacts.map((contact, index) => {
     return (
       <div>
         <ul id="tileArray">
