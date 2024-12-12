@@ -1,4 +1,5 @@
 import React from "react";
+import {ContactPicker} from '../contactPicker/ContactPicker';
 
 const getTodayString = () => {
   const [month, day, year] = new Date()
@@ -59,7 +60,7 @@ const handleContact = (contactName) => {
         </input>
       </div>
       <div>
-        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} handleContact={handleContact} contactsList={contacts} />
+        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} handleContact={handleContact} contacts={contacts} />
       </div>
       <button id="appointmentFormBtn" type="submit">Submit</button>
     </form>
