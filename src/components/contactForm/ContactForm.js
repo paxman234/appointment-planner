@@ -13,11 +13,11 @@ export const ContactForm = ({
     <form  id="contactForm" onSubmit={handleSubmit}>
       <div>
         <input 
-        type="text" 
+        type="text"
         id="nameForm" 
         placeholder="name" 
         value={name}
-        onChange={() => name ? setName(name) : ""}
+        onChange={(e) => setName(e.target.value) }
         required>
 
         </input>
@@ -29,17 +29,17 @@ export const ContactForm = ({
         placeholder="telephone number" 
         value={phone}
         pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
-        onChange={() => phone ? setPhone(phone) : ""}>
+        onChange={(e) => setPhone(e.target.value) }>
 
         </input>
       </div>          
       <div>
         <input 
-        type="text" 
+        type="text"
         id="emailForm" 
         placeholder="email" 
         value={email}
-        onChange={() => email ? setEmail(email) : ""}
+        onChange={(e) => setEmail(e.target.value) }
         required>
 
         </input>

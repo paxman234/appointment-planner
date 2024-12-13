@@ -31,7 +31,7 @@ const handleContact = (contact) => {
         id="titleForm" 
         placeholder="name" 
         value={title}
-        onChange={() => title ? setTitle(title) : ""}
+        onChange={(e) => setTitle(e.target.value) }
         required>
 
         </input>
@@ -43,7 +43,7 @@ const handleContact = (contact) => {
         placeholder="date" 
         min={getTodayString()}
         value={date}
-        onChange={() => date ? setDate(date) : {}}
+        onChange={(e) => setDate(e.target.value)}
         required>
           
         </input>
@@ -54,7 +54,7 @@ const handleContact = (contact) => {
         id="timeForm" 
         placeholder="time" 
         value={time}
-        onChange={() => time ? setTime(time) : {}}
+        onChange={(e) => setTime(e.target.value)}
         required>
           
         </input>

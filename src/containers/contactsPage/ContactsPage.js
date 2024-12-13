@@ -47,7 +47,7 @@ export const ContactsPage = (props) => {
         phone={phone} 
         setPhone={handlePhone}
         email={email} 
-        onEmailChange={handleEmail}
+        setEmail={handleEmail}
         handleSubmit={handleSubmit} 
         />
       </section>
