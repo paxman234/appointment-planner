@@ -20,9 +20,6 @@ export const AppointmentForm = ({
   setTime,
   handleSubmit
 }) => {
-const handleContact = (contact) => {
-  setContact(contact);
-}
   return (
     <form id="appointmentForm" onSubmit={handleSubmit}>
       <div>
@@ -60,7 +57,7 @@ const handleContact = (contact) => {
         </input>
       </div>
       <div>
-        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} handleContact={handleContact} contacts={contacts} />
+        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} onSelect={setContact(contact)} contacts={contacts} />
       </div>
       <button id="appointmentFormBtn" type="submit">Submit</button>
     </form>

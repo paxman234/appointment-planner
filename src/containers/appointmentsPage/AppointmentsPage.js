@@ -17,23 +17,37 @@ export const AppointmentsPage = (props) => {
       time: time
     };
     props.addAppointments(appointmentObj);
-    document.getElementById("appointmentForm").reset();
+    e.target.reset();
+  };
+  //setter functions
+  const handleTitle = (title) => {
+    setTitle(title);
   };
 
+  const handleDate = (date) => {
+    setDate(date);
+  };
+
+  const handleTime = (time) => {
+    setTime(time);
+  };
+  const handleContact = (contact) => {
+    setContact(contact);
+  }
   return (
     <div>
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm         
         title={title} 
-        setTitle={setTitle}
+        setTitle={handleTitle}
         contacts={props.contacts}
         contact={contact} 
-        setContact={setContact}
+        setContact={handleContact}
         date={date} 
-        setDate={setDate}
+        setDate={handleDate}
         time={time}
-        setTime={setTime}
+        setTime={handleTime}
         handleSubmit={handleSubmit} />
       </section>
       <hr />
