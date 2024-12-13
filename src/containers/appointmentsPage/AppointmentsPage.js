@@ -5,7 +5,7 @@ import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
   const [title, setTitle] = useState("");
-  const [contact, setContact] = useState(null);
+  const [contact, setContact] = useState("");
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState(new Date());
   const handleSubmit = (e) => {
