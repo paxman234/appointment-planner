@@ -57,7 +57,7 @@ export const AppointmentForm = ({
         </input>
       </div>
       <div>
-        <ContactPicker name="contactPicker" value={contact ? contact.value : ""} onSelect={setContact(contact)} contacts={contacts} />
+        <ContactPicker name="contactPicker" value={contact} onChange={(e) => setContact(e.target.value)} contacts={contacts} required />
       </div>
       <button id="appointmentFormBtn" type="submit">Submit</button>
     </form>
