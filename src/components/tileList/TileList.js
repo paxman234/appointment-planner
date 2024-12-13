@@ -1,7 +1,8 @@
 import React from "react";
 import {Tile} from '../tile/Tile'
-export const TileList = ({contacts}) => {  
-
+export const TileList = ({contacts}) => {
+  const [name, ...description] = contacts;
+  // const {description} = props;
   return (
     <div>
       <ul id="tileArray">
