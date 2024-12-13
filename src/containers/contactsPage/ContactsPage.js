@@ -8,7 +8,7 @@ export const ContactsPage = (props) => {
   const [phone, setPhone ] = useState("#");
   const [email, setEmail] = useState("");
   useEffect(() => {
-    const isDuplicate = props.contacts.name.includes(name);
+    const isDuplicate = props.contacts.includes(name);
     if(name && isDuplicate) {
       console.log("This name is already taken.")
     }
@@ -26,15 +26,15 @@ export const ContactsPage = (props) => {
   };
   //setter functions
   const handleEmail = (email) => {
-    email ? setEmail(email) : email;
+    setEmail(email);
   };
 
   const handlePhone = (phone) => {
-    phone ? setPhone(phone) : phone;
+    setPhone(phone);
   };
 
   const handleName = (name) => {
-    name ? setName(name) : name;
+    setName(name);
   };
 
   return (
