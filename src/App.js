@@ -7,17 +7,17 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
- const addContacts = (name, number, email) => {
-  if(name && number && email) {
+ const addContacts = ({name, phone, email}) => {
+  if(name && phone && email) {
     const contactObj = {
       name: name,
-      number: number,
+      phone: phone,
       email: email
     };
     setContacts((contacts) => [contactObj, ...contacts]);
   }
  }
- const addAppointments = (name, contact, date, time) => {
+ const addAppointments = ({name, contact, date, time}) => {
   if(name && contact && date && time) {
     const appointmentObj = {
       name: name,

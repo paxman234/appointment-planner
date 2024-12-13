@@ -18,6 +18,12 @@ export const ContactsPage = (props) => {
   }, [name])
   const handleSubmit = (e) => {
     e.preventDefault();
+    const contactObj = {
+      name: name,
+      phone: phone,
+      email: email
+    };
+    props.addContacts(contactObj);
     e.target.reset()
   };
   //setter functions
