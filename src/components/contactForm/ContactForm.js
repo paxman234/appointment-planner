@@ -22,11 +22,12 @@ export const ContactForm = ({
 
         </input>
       </div>
-      <div>
+      <div id="phoneInput">
+        <label></label>
         <input 
         type="tel"
         id="telephoneNumberForm" 
-        placeholder="telephone number" 
+        placeholder="#(123) 456-7890" 
         value={phone}
         pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" 
         onChange={(e) => setPhone(e.target.value) }>
@@ -34,10 +35,11 @@ export const ContactForm = ({
         </input>
       </div>          
       <div>
+        <label></label>
         <input 
         type="text"
         id="emailForm" 
-        placeholder="email" 
+        placeholder="example@mail.com" 
         value={email}
         onChange={(e) => setEmail(e.target.value) }
         required>

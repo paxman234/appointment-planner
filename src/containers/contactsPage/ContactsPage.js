@@ -5,7 +5,7 @@ import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = (props) => {
   const [name, setName ] = useState("");
-  const [phone, setPhone ] = useState("#");
+  const [phone, setPhone ] = useState("");
   const [email, setEmail] = useState("");
   useEffect(() => {
     const isDuplicate = props.contacts.includes(name);
@@ -18,10 +18,6 @@ export const ContactsPage = (props) => {
   }, [name])
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if(name && props.contacts.includes(name)) {
-    //   name += " (duplicate)";
-    // }
-    //set each property.
     e.target.reset()
   };
   //setter functions
