@@ -24,6 +24,18 @@ export const ContactsPage = (props) => {
     //set each property.
     e.target.reset()
   };
+  //setter functions
+  const handleEmail = (email) => {
+    email ? setEmail(email) : email;
+  };
+
+  const handlePhone = (phone) => {
+    phone ? setPhone(phone) : phone;
+  };
+
+  const handleName = (name) => {
+    name ? setName(name) : name;
+  };
 
   return (
     <div>
@@ -31,11 +43,11 @@ export const ContactsPage = (props) => {
         <h2>Add Contact</h2>
         <ContactForm 
         name={name} 
-        setName={setName}
+        setName={handleName}
         phone={phone} 
-        setPhone={setPhone}
+        setPhone={handlePhone}
         email={email} 
-        setEmail={setEmail}
+        onEmailChange={handleEmail}
         handleSubmit={handleSubmit} 
         />
       </section>
