@@ -1,12 +1,14 @@
 import React from "react";
 
 export const Tile = (props) => {
+  const {name, description} = props;
   return (
     <div className="tile-container">
-      <p className="tile-tile">{props.name}</p>
-      {props.description.values((descItem) => {
-        <p className="tile" >{descItem}</p>
-      })}
+      <p className="tile-tile">{name}</p>
+      {Object.values(description).map(descItem => (
+      <p className="tile">{descItem}</p>
+      )
+    )}
     </div>
   );
 };
