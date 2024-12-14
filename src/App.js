@@ -7,26 +7,26 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
- const addContacts = ({name, phone, email}) => {
-  if(name && phone && email) {
-    const contactObj = {
-      name: name,
-      phone: phone,
-      email: email
-    };
-    setContacts((contacts) => [contactObj, ...contacts]);
-  }
+ const addContacts = (contactObj) => {
+  // if(name && phone && email) {
+  //   const contactObj = {
+  //     name: name,
+  //     phone: phone,
+  //     email: email
+  //   };
+  setContacts((contacts) => [contactObj, ...contacts]);
+  // }
  }
- const addAppointments = ({name, contact, date, time}) => {
-  if(name && contact && date && time) {
-    const appointmentObj = {
-      name: name,
-      contact: contact,
-      date: date,
-      time: time
-    };
-    setAppointments((appointments) => [appointmentObj, ...appointments]);
-  }
+ const addAppointments = (appointmentObj) => {
+  // if(name && contact && date && time) {
+  //   const appointmentObj = {
+  //     name: name,
+  //     contact: contact,
+  //     date: date,
+  //     time: time
+  //   };
+  setAppointments((appointments) => [appointmentObj, ...appointments]);
+  // }
  }
 
   const router = createBrowserRouter(createRoutesFromElements(

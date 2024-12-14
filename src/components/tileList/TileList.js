@@ -1,18 +1,17 @@
 import React from "react";
 import {Tile} from '../tile/Tile'
-export const TileList = ({contacts}) => {
-  const [dataArray] = contacts;
-  // const {description} = props;
+export const TileList = (props) => {
+  const {contacts} = props;
   return (
     <div>
       <ul id="tileArray">
-        {dataArray ? dataArray.map((dataObj, index) => {
-          {const {name, ...description} = dataObj; 
+        {contacts.map(({name, ...description} = contacts, index) => {
+          // {const ; 
           <li key={index}>
-            <Tile id={index} name={name} description={description}/>
+            <Tile name={name} description={description}/>
           </li>
-          }
-        }) : <li><p>Nothing to display...</p></li>}
+        }) //: <li><p>Nothing to display...</p></li>
+        }
       </ul>
     </div>
 
