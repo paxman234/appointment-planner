@@ -5,10 +5,10 @@ export const Tile = (props) => {
   return (
     <div className="tile-container">
       <p className="tile-tile">{name}</p>
-      {Object.values(description).map(descItem => (
-      <p className="tile">{descItem}</p>
-      )
-    )}
+      {Object.values(description).map((descItem, index) => (
+        <p key={index} className="tile">{descItem}</p>
+      )) 
+    }
     </div>
   );
 };
