@@ -7,23 +7,32 @@ export const ContactsPage = (props) => {
   const [name, setName ] = useState("");
   const [phone, setPhone ] = useState("");
   const [email, setEmail] = useState("");
-  useEffect(() => {
-    const isDuplicate = props.contacts.includes(name);
-    if(name && isDuplicate) {
-      console.log("This name is already taken.")
-    }
-    else {
-      console.log(name);
-    }
-  }, [name])
+  // useEffect(() => {
+    // const isDuplicate = props.contacts?["name"].includes(name) : "";
+    // if(name && isDuplicate) {
+    //   console.log("This name is already taken.")
+    // }
+    // else {
+    //   console.log(name);
+    // }
+  // }, [name])
   const handleSubmit = (e) => {
     e.preventDefault();
-    const contactObj = {
-      name: name,
-      phone: phone,
-      email: email
-    };
-    props.addContacts(contactObj);
+    if(props.contacts.includes(e.target[0].value)) {
+      console.log('Already submitted name');
+      return;
+    }
+    else {
+      const contactObj = {
+        name: name,
+        phone: phone,
+        email: email
+      };
+      props.addContacts(contactObj);
+      setName("");
+      setPhone("");
+      setEmail("");
+    }
     e.target.reset()
   };
   //setter functions
