@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const ContactPicker = (props) => {
-  const [selectedContact, setSelectedContact] = useState("");
+export const ContactPicker = ({name, value, contacts, onChange}) => {
+  // const [selectedContact, setSelectedContact] = useState([]);
+  // const contactOptions = contacts.map((contact) => contact["name"]);
   return (
-    <select name={props.name} value={selectedContact} onChange={e => setSelectedContact(e.target.value)}>
-      <option value="">No Contact Selected</option>
-      {props.contacts.map((contact) => {
-        <option value={contact}>{contact.name}</option>
-      })}
+    <select id="contactsList" form="appointmentForm" name={name} value onChange={onChange}>
+      {/* <option key={0} name="default" value=""></option> */}
+      {contacts.map((contact, index) => (
+        <option key={index} name={contact["name"]} value={contact}>{contact.name}</option>
+      )) 
+      // : <options>Please add more contacts...</options>
+      }
     </select>
   );
 };
