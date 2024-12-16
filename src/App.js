@@ -14,7 +14,13 @@ function App() {
   //     phone: phone,
   //     email: email
   //   };
-  setContacts((contacts) => [contactObj, ...contacts]);
+  setContacts((prev) => {
+    if (prev.includes(contactObj)) {
+      return prev.filter(con => con.name !== contactObj.name);
+    } else{
+      return [contactObj, ...prev];
+    }
+  });
   // }
  }
  const addAppointments = (appointmentObj) => {
