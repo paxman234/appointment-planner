@@ -8,12 +8,6 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
  const addContacts = (contactObj) => {
-  // if(name && phone && email) {
-  //   const contactObj = {
-  //     name: name,
-  //     phone: phone,
-  //     email: email
-  //   };
   setContacts((prev) => {
     if (prev.includes(contactObj)) {
       return prev.filter(con => con.name !== contactObj.name);
@@ -21,18 +15,10 @@ function App() {
       return [contactObj, ...prev];
     }
   });
-  // }
  }
  const addAppointments = (appointmentObj) => {
-  // if(name && contact && date && time) {
-  //   const appointmentObj = {
-  //     name: name,
-  //     contact: contact,
-  //     date: date,
-  //     time: time
-  //   };
   setAppointments((appointments) => [appointmentObj, ...appointments]);
-  // }
+
  }
 
   const router = createBrowserRouter(createRoutesFromElements(
