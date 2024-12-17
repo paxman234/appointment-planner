@@ -6,8 +6,8 @@ import { TileList } from "../../components/tileList/TileList";
 export const AppointmentsPage = (props) => {
   const [title, setTitle] = useState("");
   const [contact, setContact] = useState(props.contacts[0] || "");
-  const [date, setDate] = useState(new Date());
-  const [time, setTime] = useState(new Date());
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     const appointmentObj = {
@@ -18,6 +18,8 @@ export const AppointmentsPage = (props) => {
     };
     props.addAppointments(appointmentObj);
     setTitle("");
+    setDate("");
+    setTime("");
     e.target.reset();
   };
   //setter functions

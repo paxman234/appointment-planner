@@ -9,7 +9,10 @@ function App() {
   const [appointments, setAppointments] = useState([]);
 
   const addContacts = (contactObj) => {
-    setContacts((contacts) => [contactObj, ...contacts]);
+    if(contactObj.hasOwnProperty('name') && contactObj.hasOwnProperty('email') 
+      && contactObj.hasOwnProperty('phone')){
+      setContacts((contacts) => [contactObj, ...contacts]);   
+    }
   }
   
   const addAppointments = (appointmentObj) => {
