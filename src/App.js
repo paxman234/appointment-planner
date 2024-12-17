@@ -8,15 +8,30 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
 
-  const addContacts = (contactObj) => {
-    if(contactObj.hasOwnProperty('name') && contactObj.hasOwnProperty('email') 
-      && contactObj.hasOwnProperty('phone')){
+  const addContacts = ({name, phone, email}) => {
+    if(name && email && phone){
+      const contactObj = {name, email, phone};
       setContacts((contacts) => [contactObj, ...contacts]);   
+    }
+    else {
+      console.error("Error submitting null input into form");
     }
   }
   
-  const addAppointments = (appointmentObj) => {
-    setAppointments((appointments) => [appointmentObj, ...appointments]);
+  const addAppointments = ({title, contact, date, time}) => {
+    if(!title || !contact || !date || !time) {
+      console.error("Error submitting null input into form");
+    }
+    else {
+      if(contact.hasOwnProperty('name')) {
+        const {name, phone, email} = contact;
+        const appString = `Appointment with ${name} \n Contact: \n ${phone} \n${email}`;
+        const appointmentObj = {title, name, date, time};
+        setAppointments((appointments) => [appointmentObj, ...appointments]);
+      }
+      
+    }
+    
   }
 
   const router = createBrowserRouter(createRoutesFromElements(

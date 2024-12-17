@@ -8,11 +8,11 @@ export const ContactPicker = ({name, value, contacts, onChange}) => {
     <select id="contactsList" 
     form="appointmentForm" 
     name={name} 
-    selected={value ? value : ""} 
+    value={value} 
     onChange={handleSelectOption} >
-      <option name="default" value="">No Content Selected.</option>
-      {contacts.map((contact, index) => (
-        <option key={index} name={contact["name"]} value={index}>{contact.name}</option>
+      <option name="default" value="">{name}</option>
+      {contacts.map((index) => (
+        <option key={index} name={contacts[index+1]?.name} value={value}></option>
         )
       )}
     </select>
