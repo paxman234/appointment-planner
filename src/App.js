@@ -23,13 +23,8 @@ function App() {
       console.error("Error submitting null input into form");
     }
     else {
-      // if(contact.hasOwnProperty('name')) {
-      // }
-      // const {name, phone, email} = contact;
-      // const appString = `Appointment with ${name} \n Contact: \n ${phone} \n${email}`;
       const appointmentObj = {title, contact, date, time};
       setAppointments((appointments) => [appointmentObj, ...appointments]);
-      
     }
     
   }
