@@ -17,6 +17,7 @@ export const AppointmentsPage = (props) => {
       time: time
     };
     props.addAppointments(appointmentObj);
+    setContact("");
     setTitle("");
     setDate("");
     setTime("");
