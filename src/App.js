@@ -8,13 +8,24 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
  const addContacts = (contactObj) => {
-  setContacts((prev) => {
-    if (prev.includes(contactObj)) {
-      return prev.filter(con => con.name !== contactObj.name);
-    } else{
-      return [contactObj, ...prev];
-    }
-  });
+  setContacts((contacts) => [contactObj, ...contacts])
+  // const contactNames = contacts.values();
+  // if(contactNames.includes(contactObj.name)) {
+  //   console.log("contact already added.");
+  //   return;
+  // }
+  // else {
+  //   contacts.filter(contact => contact.name !== contactObj.name);
+  //   setContacts((prev) => [contactObj, ...prev]);
+  // }
+
+  // setContacts((prev) => {
+  //   if (prev.includes(contactObj)) {
+  //     return prev.filter(con => con.name !== contactObj.name);
+  //   } else{
+  //     return [contactObj, ...prev];
+  //   }
+  // });
  }
  const addAppointments = (appointmentObj) => {
   setAppointments((appointments) => [appointmentObj, ...appointments]);

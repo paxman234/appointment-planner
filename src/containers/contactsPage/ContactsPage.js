@@ -18,9 +18,13 @@ export const ContactsPage = (props) => {
   // }, [name])
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(props.contacts.includes(e.target[0].value)) {
-      console.log('Already submitted name');
-      return;
+    const isDuplicate = props.contacts.find((contact) => contact?.name === name);
+    // if(props.contacts.includes(e.target[0].value)) {
+    //   console.log('Already submitted name');
+    //   return;
+    // }
+    if(isDuplicate) {
+      alert("Contact with the same name has already been submitted.");
     }
     else {
       const contactObj = {
