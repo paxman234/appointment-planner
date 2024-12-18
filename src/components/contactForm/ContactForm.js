@@ -3,6 +3,8 @@ import React from "react";
 export const ContactForm = ({
   name,
   setName,
+  errMsgName,
+  errorRefName,
   phone,
   setPhone,
   email,
@@ -21,6 +23,8 @@ export const ContactForm = ({
         required>
 
         </input>
+        <p ref={errorRefName} className={errMsgName ? "errmsg" :
+                  "offscreen"} aria-live="assertive">{errMsgName}</p>
       </div>
       <div id="phoneInput">
         <label></label>
@@ -46,7 +50,7 @@ export const ContactForm = ({
 
         </input>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={errMsgName}>Submit</button>
     </form>
   );
 };
